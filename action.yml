@@ -19,7 +19,7 @@ runs:
       shell: bash
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
-    - run ls "\\il1dtoutinfs001.kcura.corp\outsideinshare\Results\Branches" >> $GITHUB_OUTPUT
+    - run ls "\\il1dtoutinfs001.kcura.corp\outsideinshare\Results\Branches" # >> $GITHUB_OUTPUT
       shell: bash
     # - run: goodbye.sh # always fails due to not being truly executable
     #   shell: bash

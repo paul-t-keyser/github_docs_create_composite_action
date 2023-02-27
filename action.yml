@@ -27,6 +27,13 @@ runs:
       shell: pwsh
 
     # FROM: https://github.com/marketplace/actions/azure-cli-action
+    - name: Check Azure version
+      uses: azure/CLI@v1
+      with:
+        # azcliversion: 2.30.0
+        inlineScript: 
+          az --version
+
     - name: Azure Login
       uses: azure/login@v1
       with:

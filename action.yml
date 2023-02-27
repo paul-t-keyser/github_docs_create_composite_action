@@ -19,6 +19,8 @@ runs:
       shell: bash
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
+    - run: echo $(pwd)
+      shell: bash
     # Experiments show that the following code is beyond the capacity of GitHubActions YAML to parse
     # - run ls //il1dtoutinfs001.kcura.corp/outsideinshare/Results/Branches
     #   shell: bash

@@ -50,4 +50,3 @@ runs:
     # Experiments show that the following code is beyond the capacity of GitHubActions YAML to parse
     # - run ls //il1dtoutinfs001.kcura.corp/outsideinshare/Results/Branches
     #   shell: bash
-S

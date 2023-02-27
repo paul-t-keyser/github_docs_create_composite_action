@@ -23,6 +23,8 @@ runs:
       shell: bash
     - run: date
       shell: bash
+    - run: Get-Verb -Verb S* | Format-List
+      shell: pwsh
     # Experiments show that the following code is beyond the capacity of GitHubActions YAML to parse
     # - run ls //il1dtoutinfs001.kcura.corp/outsideinshare/Results/Branches
     #   shell: bash

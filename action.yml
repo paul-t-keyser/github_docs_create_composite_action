@@ -25,6 +25,21 @@ runs:
       shell: bash
     - run: Get-Verb -Verb S* | Format-List
       shell: pwsh
+
+    # FROM: https://github.com/marketplace/actions/azure-cli-action
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Azure CLI script
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.30.0
+        inlineScript: |
+          az account show
+          az storage -h
+
     # Experiments show that the following code is beyond the capacity of GitHubActions YAML to parse
     # - run ls //il1dtoutinfs001.kcura.corp/outsideinshare/Results/Branches
     #   shell: bash

@@ -34,6 +34,22 @@ runs:
         inlineScript: 
           az --version
 
+#     Gotten from: https://github.com/relativityone/get-keyvault-secrets-action/tree/main#single-secret
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - uses: relativityone/get-keyvault-secrets-action@v0
+        id: secret
+        with:https://github.com/marketplace/actions/azure-cli-action
+          key-vault: my-key-vault
+          secrets: my-secret
+
+      - name: assert non null
+        run: |
+          [[ ! -z "${{ steps.secret.outputs.my-secret }}" ]] && echo "Not empty"
+
+#    Gotten from: https://github.com/marketplace/actions/azure-cli-action
 #    - name: Azure Login
 #      uses: azure/login@v1
 #      with:

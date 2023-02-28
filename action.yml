@@ -41,7 +41,7 @@ runs:
 
       - uses: relativityone/get-keyvault-secrets-action@v0
         id: secret
-        with:https://github.com/marketplace/actions/azure-cli-action
+        with:
           key-vault: my-key-vault
           secrets: my-secret
 
